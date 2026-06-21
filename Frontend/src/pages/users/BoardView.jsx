@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import api from '../../api/axios';
 import { useAuth } from '../../context/AuthContext';
 import TaskCard from '../../components/TaskCard';
-import CreateTaskModal from './modal/CreateTaskModal';
-import TaskDetailModal from './modal/TaskDetailModal';
+import CreateTaskModal from './Modal/CreateTaskModal';
+import TaskDetailModal from './Modal/TaskDetailModal';
 import { Plus } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 
