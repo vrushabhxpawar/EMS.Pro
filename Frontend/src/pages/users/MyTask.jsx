@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import StatusBadge from '../../components/StatusBadge';
 import PriorityBadge from '../../components/PriorityBadge';
-import TaskDetailModal from './modal/TaskDetailModal';
+import TaskDetailModal from './Modal/TaskDetailModal.jsx';
 import { SlidersHorizontal } from 'lucide-react';
 
 const STATUSES   = ['All', 'Todo', 'InProgress', 'Done'];
