@@ -365,22 +365,6 @@ router.get('/my-tasks', protect, getMyTasks);  // ✅ first
 router.get('/:id',      protect, getTaskById); // ✅ after
 ```
 
-### Axios 401 Interceptor
-
-When a cookie expires the interceptor redirects to login automatically:
-
-```js
-api.interceptors.response.use(
-  res => res,
-  error => {
-    if (error.response?.status === 401) {
-      window.location.href = '/login';
-    }
-    return Promise.reject(error);
-  }
-);
-```
-
 ### Profile State Sync
 
 Profile form state is initialized empty and synced via `useEffect` once the auth user loads — avoids the stale closure problem of initializing state from `user` directly in `useState()`:
