@@ -11,16 +11,7 @@ const PORT = process.env.PORT;
 
 app.use(cookieParser());
 app.use(cors({
-  origin: function (origin, callback) {
-    console.log("Incoming Origin:", origin);
-    console.log("CLIENT env value:", JSON.stringify(process.env.CLIENT));
-    if (origin === process.env.CLIENT || !origin) {
-      callback(null, true);
-    } else {
-      console.log("MISMATCH — blocked by CORS");
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: [ process.env.CLIENT, "http://localhost:5173" ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
@@ -32,6 +23,9 @@ app.listen(PORT, async (req, res) => {
   console.log(`Server : http://localhost:${PORT}`);
 });
 
+app.get('/', (req, res) => {
+  res.send('Server Running')
+})
 
 import authRoute from "./routes/auth.routes.js";
 import taskRoute from "./routes/task.routes.js";
