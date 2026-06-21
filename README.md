@@ -2,6 +2,10 @@
 
 A full-stack MERN application for managing employee tasks, boards, and team workflows. Admins can create boards, assign tasks, and manage users. Employees can view their assigned tasks, update progress, and track deadlines.
 
+## Frontend URL : https://emspro-frontend.vercel.app
+
+## Backend URL : https://ems-pro-backend-l598.onrender.com
+
 ---
 
 ## Table of Contents
