@@ -10,6 +10,10 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(cookieParser());
+app.use((req, res, next) => {
+  console.log("HIT:", req.method, req.url);
+  next();
+});
 app.use(cors({
   origin: function (origin, callback) {
     console.log("Incoming Origin:", origin);
