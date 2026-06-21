@@ -10,12 +10,12 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://emspro-frontend.vercel.app",
-    credentials: true,
-  }),
-);
+app.use(cors({
+  origin: process.env.CLIENT,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.json());
 
 await connectDB();
