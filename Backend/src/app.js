@@ -12,7 +12,7 @@ const PORT = process.env.PORT;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [process.env.CLIENT, "http://localhost:5173"],
+    origin: "https://emspro-frontend.vercel.app",
     credentials: true,
   }),
 );
