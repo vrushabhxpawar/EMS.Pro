@@ -11,7 +11,16 @@ const PORT = process.env.PORT;
 
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.CLIENT,
+  origin: function (origin, callback) {
+    console.log("Incoming Origin:", origin);
+    console.log("CLIENT env value:", JSON.stringify(process.env.CLIENT));
+    if (origin === process.env.CLIENT || !origin) {
+      callback(null, true);
+    } else {
+      console.log("MISMATCH — blocked by CORS");
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
