@@ -10,10 +10,11 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     // Cookie is sent automatically — just check if session is valid
-    api.get('/auth/me')
+    const res = api.get('/auth/me')
       .then(res => setUser(res.data.data))
       .catch(() => setUser(null))
       .finally(() => setLoading(false));
+      console.log(res.data)
   }, []);
 
   const login = async (email, password) => {
@@ -29,7 +30,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, setUser, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

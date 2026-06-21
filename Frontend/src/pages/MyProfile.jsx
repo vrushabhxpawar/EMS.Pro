@@ -130,6 +130,7 @@ export default function MyProfile() {
   // Init from auth user
   useEffect(() => {
     if (user) {
+      console.log()
       setProfileForm({ name: user.name || '', email: user.email || '' });
       setAvatarColor(user.avatarColor || 'bg-gray-800');
     }
