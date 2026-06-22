@@ -403,6 +403,20 @@ npm run preview  # Preview production build
 
 ---
 
+## Media
+
+User Dashboard
+
+<img width="1912" height="912" alt="image" src="https://github.com/user-attachments/assets/ffe66ff7-ca6d-4bf9-8324-ae42b64006ab" />
+
+Admin Dashboard
+
+<img width="1902" height="912" alt="image" src="https://github.com/user-attachments/assets/4439beba-3b65-461d-8a0f-6f0a680b8dcf" />
+
+Demo Video
+
+https://github.com/user-attachments/assets/8a76a2f1-f234-4449-b168-eaf72d5c8c2d
+
 ## License
 
 MIT — free to use and modify for personal or commercial projects.
