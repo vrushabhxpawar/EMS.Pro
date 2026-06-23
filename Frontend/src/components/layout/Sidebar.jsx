@@ -28,7 +28,7 @@ export default function Sidebar() {
     <aside className="w-56 bg-white border-r border-gray-200 flex flex-col py-4 shrink-0">
       {/* Logo */}
 
-      <Link to="/">
+      <Link to={isAdmin ? "/admin" : "/"}>
         <div className="px-4 mb-8 flex items-center gap-2">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <CheckSquare className="w-4 h-4 text-primary-foreground" />
